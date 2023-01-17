@@ -1,0 +1,10 @@
+.popup__input_person_name {
+    margin: 0 36px 30px;
+}
+
+@media screen and (max-width: 653px) {
+
+    .popup__input_person_name {
+        margin: 17px 20px 27px;
+    }
+}

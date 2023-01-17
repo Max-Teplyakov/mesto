@@ -1,0 +1,10 @@
+.popup__input_person_about-me {
+    margin: 0 36px;
+}
+
+@media screen and (max-width: 653px) {
+
+    .popup__input_person_about-me {
+        margin: 0 21px;
+    }
+}

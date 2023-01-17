@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./vendor/normalize.css">
+    <link rel="stylesheet" href="./vendor/fonts/fonts.css">
+    <link rel="stylesheet" href="./pages/index.css">
+    <title>Блог</title>
+</head>
+
+<body class="page">
+    <header class="header">
+        <img src="./images/logo-white.png" alt="логотип Сайта" class="header__img">
+    </header>
+
+    <main class="content">
+        <section class="profile">
+            <img src="./images/zhak-iv-kusto.jpg" alt="аватар" class="profile__avatar">
+            <div class="profile__info">
+                <div class="profile__block">
+                    <h1 class="profile__name">Жак-Ив Кусто</h1>
+                    <button class="profile__redact active">
+                    </button>
+                </div>
+                <p class="profile__about-me">Исследователь океана</p>
+            </div>
+            <button class="profile__add-button active">
+                <img src="./images/plus.png" alt="крестик кнопка" class="profile__btn-img">
+            </button>
+        </section>
+
+        <section class="elements">
+            <div class="element">
+                <img src="./images/building.jpg" alt="каменный дом" class="element__img">
+                <div class="element__block">
+                    <h2 class="element__title">Карачаевск</h2>
+                    <button class="element__btn-like active">
+                    </button>
+                </div>
+            </div>
+            <div class="element">
+                <img src="./images/field.jpg" alt="поле" class="element__img">
+                <div class="element__block">
+                    <h2 class="element__title">Гора Эльбрус</h2>
+                    <button class="element__btn-like active">
+                    </button>
+                </div>
+            </div>
+            <div class="element">
+                <img src="./images/mountain.jpg" alt="горы и леса" class="element__img">
+                <div class="element__block">
+                    <h2 class="element__title">Домбай</h2>
+                    <button class="element__btn-like active">
+                    </button>
+                </div>
+            </div>
+            <div class="element">
+                <img src="./images/field.jpg" alt="поле" class="element__img">
+                <div class="element__block">
+                    <h2 class="element__title">Гора Эльбрус</h2>
+                    <button class="element__btn-like active">
+                    </button>
+                </div>
+            </div>
+            <div class="element">
+                <img src="./images/mountain.jpg" alt="горы и леса" class="element__img">
+                <div class="element__block">
+                    <h2 class="element__title">Домбай</h2>
+                    <button class="element__btn-like active">
+                    </button>
+                </div>
+            </div>
+            <div class="element">
+                <img src="./images/building.jpg" alt="каменный дом" class="element__img">
+                <div class="element__block">
+                    <h2 class="element__title">Карачаево-Черкессия</h2>
+                    <button class="element__btn-like active">
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        © 2020 Mesto Russia
+    </footer>
+
+    <section class="popup">
+        <div class="popup__container">
+            <button class="popup__close-btn active">
+            </button>
+            <h2 class="popup__title">Редактировать профиль</h2>
+            <form class="popup__form">
+                <input class="popup__input popup__input_person_name" type="text" placeholder="Жак-Ив Кусто">
+
+                <input class="popup__input popup__input_person_about-me" type="text" placeholder="Исследователь океана">
+
+                <button class="popup__save-btn active" type="submit">Сохранить</button>
+            </form>
+        </div>
+    </section>
+    <script src="./scripts/index.js"></script>
+</body>
+
+</html>
