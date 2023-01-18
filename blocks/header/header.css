@@ -2,12 +2,19 @@
     margin: 0 auto;
     max-width: 880px;
     padding: 45px 0 35px;
-    border-bottom: 1px solid #545454;
+    border-bottom: 1px solid rgba(84, 84, 84, 0.7);
     opacity: 1;
+}
+
+@media screen and (max-width: 900px) {
+    .header {
+        margin: 0 10px;
+    }
 }
 
 @media screen and (max-width: 653px) {
     .header {
+        margin: 0 auto;
         padding: 28px 0 26px 27px;
     }
 }

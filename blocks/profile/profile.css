@@ -6,6 +6,13 @@
     grid-template-columns: 120px auto 150px;
 }
 
+@media screen and (max-width: 900px) {
+    .profile {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
 @media screen and (max-width: 653px) {
 
     .profile {

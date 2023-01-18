@@ -1,48 +1,33 @@
 let popup = document.querySelector('.popup')
 let popupOpenBtn = document.querySelector('.profile__redact');
 let popupCloseBtn = popup.querySelector('.popup__close-btn');
-let popupSaveBtn = popup.querySelector('.popup__save-btn');
 let profileName = document.querySelector('.profile__name');
 let profileJob = document.querySelector('.profile__about-me');
 
-popupOpenBtn.addEventListener('click', function activePoap() {
+function activePoap() {
     popup.classList.toggle('popup_opened');
-})
+    nameInput.value = profileName.textContent;
+    jobInput.value = profileJob.textContent;
+}
 
-popupCloseBtn.addEventListener('click', function inactivePoap() {
-    popup.classList.toggle('popup_opened');
-})
+popupOpenBtn.addEventListener('click', activePoap);
 
+popupCloseBtn.addEventListener('click', activePoap);
 
-// Находим форму в DOM
-let formElement = document.querySelector('.popup__form');// Воспользуйтесь методом querySelector()
-// Находим поля формы в DOM
-let nameInput = formElement.querySelector('.popup__input_person_name');// Воспользуйтесь инструментом .querySelector()
-let jobInput = formElement.querySelector('.popup__input_person_about-me');// Воспользуйтесь инструментом .querySelector()
+let formElement = document.querySelector('.popup__form');
 
-// Обработчик «отправки» формы, хотя пока
-// она никуда отправляться не будет
+let nameInput = formElement.querySelector('.popup__input_person_name');
+let jobInput = formElement.querySelector('.popup__input_person_about-me');
+
 function handleFormSubmit(evt) {
-    evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
-    // Так мы можем определить свою логику отправки.
-    // О том, как это делать, расскажем позже.
+    evt.preventDefault();
 
     profileJob.textContent = jobInput.value;
     profileName.textContent = nameInput.value;
-    // Получите значение полей jobInput и nameInput из свойства value
 
-    // Выберите элементы, куда должны быть вставлены значения полей
-    nameInput.value = profileName.textContent;
-    jobInput.value = profileJob.textContent;
-    // Вставьте новые значения с помощью textContent
-
+    activePoap();
 }
 
-// Прикрепляем обработчик к форме:
-// он будет следить за событием “submit” - «отправка»
-
 formElement.addEventListener('submit', handleFormSubmit);
-popupSaveBtn.addEventListener('click', function inactivePoap() {
-    popup.classList.toggle('popup_opened');
-})
+
 

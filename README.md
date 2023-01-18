@@ -9,7 +9,7 @@
 
 **Сайт**
 
-* [Ссылка на сайт]
+* [Ссылка на сайт](https://max-teplyakov.github.io/mesto/)
 
 **Figma**
 

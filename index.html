@@ -11,7 +11,7 @@
 
 <body class="page">
     <header class="header">
-        <img src="./images/logo-white.png" alt="логотип Сайта" class="header__img">
+        <img src="./images/logo.svg" alt="логотип Сайта" class="header__img">
     </header>
 
     <main class="content">
@@ -20,12 +20,11 @@
             <div class="profile__info">
                 <div class="profile__block">
                     <h1 class="profile__name">Жак-Ив Кусто</h1>
-                    <button class="profile__redact active">
-                    </button>
+                    <button class="profile__redact active" type="button"></button>
                 </div>
                 <p class="profile__about-me">Исследователь океана</p>
             </div>
-            <button class="profile__add-button active">
+            <button class="profile__add-button active" type="button">
                 <img src="./images/plus.png" alt="крестик кнопка" class="profile__btn-img">
             </button>
         </section>
@@ -35,7 +34,7 @@
                 <img src="./images/building.jpg" alt="каменный дом" class="element__img">
                 <div class="element__block">
                     <h2 class="element__title">Карачаевск</h2>
-                    <button class="element__btn-like active">
+                    <button class="element__btn-like active" type="button">
                     </button>
                 </div>
             </div>
@@ -43,7 +42,7 @@
                 <img src="./images/field.jpg" alt="поле" class="element__img">
                 <div class="element__block">
                     <h2 class="element__title">Гора Эльбрус</h2>
-                    <button class="element__btn-like active">
+                    <button class="element__btn-like active" type="button">
                     </button>
                 </div>
             </div>
@@ -51,7 +50,7 @@
                 <img src="./images/mountain.jpg" alt="горы и леса" class="element__img">
                 <div class="element__block">
                     <h2 class="element__title">Домбай</h2>
-                    <button class="element__btn-like active">
+                    <button class="element__btn-like active" type="button">
                     </button>
                 </div>
             </div>
@@ -59,7 +58,7 @@
                 <img src="./images/field.jpg" alt="поле" class="element__img">
                 <div class="element__block">
                     <h2 class="element__title">Гора Эльбрус</h2>
-                    <button class="element__btn-like active">
+                    <button class="element__btn-like active" type="button">
                     </button>
                 </div>
             </div>
@@ -67,7 +66,7 @@
                 <img src="./images/mountain.jpg" alt="горы и леса" class="element__img">
                 <div class="element__block">
                     <h2 class="element__title">Домбай</h2>
-                    <button class="element__btn-like active">
+                    <button class="element__btn-like active" type="button">
                     </button>
                 </div>
             </div>
@@ -75,7 +74,7 @@
                 <img src="./images/building.jpg" alt="каменный дом" class="element__img">
                 <div class="element__block">
                     <h2 class="element__title">Карачаево-Черкессия</h2>
-                    <button class="element__btn-like active">
+                    <button class="element__btn-like active" type="button">
                     </button>
                 </div>
             </div>
@@ -83,23 +82,23 @@
     </main>
 
     <footer class="footer">
-        © 2020 Mesto Russia
+        <p>© 2020 Mesto Russia</p>
     </footer>
 
-    <section class="popup">
+    <div class="popup">
         <div class="popup__container">
-            <button class="popup__close-btn active">
-            </button>
+            <button class="popup__close-btn active" type="button"></button>
             <h2 class="popup__title">Редактировать профиль</h2>
-            <form class="popup__form">
-                <input class="popup__input popup__input_person_name" type="text" placeholder="Жак-Ив Кусто">
+            <form class="popup__form" name="profile-info">
+                <input class="popup__input popup__input_person_name" name="name" type="text" placeholder="Имя">
 
-                <input class="popup__input popup__input_person_about-me" type="text" placeholder="Исследователь океана">
+                <input class="popup__input popup__input_person_about-me" name="about-me" type="text"
+                    placeholder="О себе">
 
-                <button class="popup__save-btn active" type="submit">Сохранить</button>
+                <button class="popup__save-btn" type="submit">Сохранить</button>
             </form>
         </div>
-    </section>
+    </div>
     <script src="./scripts/index.js"></script>
 </body>
 
