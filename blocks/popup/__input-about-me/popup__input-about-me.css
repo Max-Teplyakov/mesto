@@ -1,0 +1,11 @@
+.popup__input-about-me {
+    margin-bottom: 48px;
+}
+
+
+@media screen and (max-width: 653px) {
+
+    .popup__input-about-me {
+        margin-bottom: 45px;
+    }
+}
