@@ -1,11 +1,12 @@
 .popup__input-about-me {
-    margin-bottom: 48px;
+    margin-bottom: 50px;
 }
 
 
 @media screen and (max-width: 653px) {
 
     .popup__input-about-me {
-        margin-bottom: 45px;
+        margin-bottom: 47px;
+        margin-top: 22px;
     }
 }

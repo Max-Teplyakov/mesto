@@ -39,6 +39,7 @@
 
 /* footer */
 @import url(../blocks/footer/footer.css);
+@import url(../blocks/footer/__title/footer__title.css);
 
 /* popup */
 @import url(../blocks/popup/popup.css);
