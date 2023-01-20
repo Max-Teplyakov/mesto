@@ -7,15 +7,19 @@ let formElement = document.querySelector('.popup__form');
 let nameInput = formElement.querySelector('.popup__input_person_name');
 let jobInput = formElement.querySelector('.popup__input_person_about-me');
 
-function activePoap() {
-    popup.classList.toggle('popup_opened');
+function openPopap() {
+    popup.classList.add('popup_opened');
     nameInput.value = profileName.textContent;
     jobInput.value = profileJob.textContent;
 }
 
-popupOpenBtn.addEventListener('click', activePoap);
+function closePopap() {
+    popup.classList.remove('popup_opened');
+}
 
-popupCloseBtn.addEventListener('click', activePoap);
+popupOpenBtn.addEventListener('click', openPopap);
+
+popupCloseBtn.addEventListener('click', closePopap);
 
 function handleFormSubmit(evt) {
     evt.preventDefault();
@@ -23,7 +27,7 @@ function handleFormSubmit(evt) {
     profileJob.textContent = jobInput.value;
     profileName.textContent = nameInput.value;
 
-    activePoap();
+    closePopap();
 }
 
 formElement.addEventListener('submit', handleFormSubmit);

@@ -47,6 +47,4 @@
 @import url(../blocks/popup/__close-btn/popup__close-btn.css);
 @import url(../blocks/popup/__title/popup__title.css);
 @import url(../blocks/popup/__input/popup__input.css);
-@import url(../blocks/popup/__input-name/popup__input-name.css);
-@import url(../blocks/popup/__input-about-me/popup__input-about-me.css);
 @import url(../blocks/popup/__save-btn/popup__save-btn.css);
