@@ -1,8 +1,9 @@
 .element__img {
     display: block;
-    max-width: 282px;
-    min-height: 282px;
+    width: 282px;
+    height: 282px;
     object-fit: cover;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    cursor: pointer;
 }
