@@ -38,12 +38,12 @@ const elementTemplate = document.querySelector('#element').content.querySelector
 const elements = document.querySelector('.elements');
 const popupCardOpen = document.querySelector('.profile__add-button');
 const popupCardContain = document.querySelector('.popup_type_card');
-const popupCardClose = document.querySelector('.popup__btn-card_close');
+const popupCardClose = document.querySelector('.popup__btn-card-close');
 const formElementCard = document.querySelector('.popup__form-card');
 const cardNameInput = formElementCard.querySelector('.popup__input_card_name');
 const cardLinkInput = formElementCard.querySelector('.popup__input_card_src');
 const popupImageConatin = document.querySelector('.popup_type_image');
-const popupImageBtnClose = document.querySelector('.popup__btn-image_close');
+const popupImageBtnClose = document.querySelector('.popup__btn-image-close');
 
 
 function renderCards(items) {
