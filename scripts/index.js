@@ -45,7 +45,7 @@ const cardLinkInput = formElementCard.querySelector('.popup__input_card_src');
 const popupImageConatin = document.querySelector('.popup_type_image');
 const popupImageBtnClose = document.querySelector('.popup__btn-image-close');
 const elementImagePopup = document.querySelector('.popup__image');
-
+const elemenTextPopup = document.querySelector('.popup__title-image');
 
 function renderCards(items) {
     const cards = items.map((item) => {
@@ -75,37 +75,37 @@ function createCard(item) {
     elementImageCard.addEventListener('click', () => {
         elementImagePopup.src = item.link;
         elementImagePopup.alt = item.name;
-        document.querySelector('.popup__title-image').textContent = item.name;
+        elemenTextPopup.textContent = item.name;
 
-        handleLikeClick(popupImageConatin);
+        tooglePopup(popupImageConatin);
     });
 
     return cardElement
 }
 
-function handleLikeClick(popup) {
+function tooglePopup(popup) {
     popup.classList.toggle('popup_opened');
 }
 
 // Открытие и закрытие попапа карточки
 popupCardOpen.addEventListener('click', () => {
-    handleLikeClick(popupCardContain)
+    tooglePopup(popupCardContain)
 });
 popupCardClose.addEventListener('click', () => {
-    handleLikeClick(popupCardContain)
+    tooglePopup(popupCardContain)
 });
 // Открытие и закрытие попапа профиля
 popupProfileOpenBtn.addEventListener('click', () => {
     nameInput.value = profileName.textContent;
     jobInput.value = profileJob.textContent;
-    handleLikeClick(popupProfile);
+    tooglePopup(popupProfile);
 });
 popupProfileCloseBtn.addEventListener('click', () => {
-    handleLikeClick(popupProfile);
+    tooglePopup(popupProfile);
 });
 //Закрытие попапа Изображения
 popupImageBtnClose.addEventListener('click', () => {
-    handleLikeClick(popupImageConatin)
+    tooglePopup(popupImageConatin)
 })
 
 function handleFormSubmitProfile(evt) {
@@ -114,7 +114,7 @@ function handleFormSubmitProfile(evt) {
     profileJob.textContent = jobInput.value;
     profileName.textContent = nameInput.value;
 
-    handleLikeClick(popupProfile);
+    tooglePopup(popupProfile);
 }
 
 function handlerFormSubmitCard(evt) {
@@ -124,7 +124,7 @@ function handlerFormSubmitCard(evt) {
 
     cardsContainer.prepend(cardElement);
 
-    handleLikeClick(popupCardContain);
+    tooglePopup(popupCardContain);
     cardLinkInput.value = '';
     cardNameInput.value = '';
 }
