@@ -44,7 +44,7 @@ const cardNameInput = formElementCard.querySelector('.popup__input_card_name');
 const cardLinkInput = formElementCard.querySelector('.popup__input_card_src');
 const popupImageConatin = document.querySelector('.popup_type_image');
 const popupImageBtnClose = document.querySelector('.popup__btn-image-close');
-
+const elementImagePopup = document.querySelector('.popup__image');
 
 
 function renderCards(items) {
@@ -59,6 +59,7 @@ renderCards(initialCards);
 function createCard(item) {
     const cardElement = elementTemplate.cloneNode(true);
     const elementImageCard = cardElement.querySelector('.element__img');
+
     elementImageCard.src = item.link;
     elementImageCard.alt = item.name;
     cardElement.querySelector('.element__title').textContent = item.name;
@@ -72,7 +73,8 @@ function createCard(item) {
     });
 
     elementImageCard.addEventListener('click', () => {
-        document.querySelector('.popup__image').src = item.link;
+        elementImagePopup.src = item.link;
+        elementImagePopup.alt = item.name;
         document.querySelector('.popup__title-image').textContent = item.name;
 
         handleLikeClick(popupImageConatin);
