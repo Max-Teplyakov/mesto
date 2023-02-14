@@ -11,6 +11,8 @@
 /* active */
 @import url(../blocks/active/active.css);
 
+/* forms */
+
 
 /* content */
 @import url(../blocks/content/content.css);
@@ -47,12 +49,17 @@
 @import url(../blocks/popup/__container/popup__container.css);
 @import url(../blocks/popup/__close-btn/popup__close-btn.css);
 @import url(../blocks/popup/__title/popup__title.css);
-@import url(../blocks/popup/__input/popup__input.css);
-@import url(../blocks/popup/__save-btn/popup__save-btn.css);
 @import url(../blocks/popup/__image/popup__image.css);
 @import url(../blocks/popup/__btn-image/popup__btn-image-close.css);
 @import url(../blocks/popup/__figure-image/popup__figure-image.css);
 @import url(../blocks/popup/__title-image/popup__title-image.css);
+
+/* popup-form */
+@import url(../blocks/popup-form/__input/popup-form__input.css);
+@import url(../blocks/popup-form/__save-btn/popup-form__save-btn.css);
+@import url(../blocks/popup-form/__input-error/popup-form__input-error.css);
+@import url(../blocks/popup-form/__set/popup-form__set.css);
+@import url(../blocks/popup-form/__button-save/_inactive/popup-form__button-save_inactive.css);
 
 /* overlay */
 @import url(../blocks/overlay/overlay.css);
