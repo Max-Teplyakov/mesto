@@ -1,9 +1,19 @@
 .popup-form__input-error {
-    margin: 5px 36px 13px;
+    position: absolute;
+    top: 30px;
+    left: 35px;
+    width: 358px;
     max-width: 358px;
     display: block;
     font-weight: 400;
     font-size: 12px;
     line-height: 15px;
     color: #FF0000;
+}
+
+@media screen and (max-width: 653px) {
+    .popup-form__input-error {
+        width: 234px;
+        left: 22px;
+    }
 }

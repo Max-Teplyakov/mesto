@@ -1,31 +1,3 @@
-// Массив С Карточками
-const initialCards = [
-    {
-        name: 'Архыз',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-    },
-    {
-        name: 'Челябинская область',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-    },
-    {
-        name: 'Иваново',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-    },
-    {
-        name: 'Камчатка',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-    },
-    {
-        name: 'Холмогорский район',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-    },
-    {
-        name: 'Байкал',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-    }
-];
-
 // Попап Профиль
 const popup = document.querySelectorAll('.popup');
 const popupProfile = document.querySelector('.popup_type_profile');
@@ -58,9 +30,6 @@ const popupCloseBtn = document.querySelectorAll('.popup__close-btn');
 // Template
 const elementTemplate = document.querySelector('#element').content.querySelector('.element');
 const cardsContainer = document.querySelector('.elements');
-
-//Forms
-
 
 function renderCards(items) {
     const cards = items.map((item) => {
@@ -166,76 +135,3 @@ function handlerFormSubmitCard(evt) {
 
 formElementProfile.addEventListener('submit', handleFormSubmitProfile);
 formElementCard.addEventListener('submit', handlerFormSubmitCard);
-
-
-// //form valid
-// Функция, которая добавляет класс с ошибкой
-const showInputError = (formElement, inputElement, errorMessage) => {
-    const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
-    inputElement.classList.add('popup-form__input_type_error');
-    errorElement.textContent = errorMessage;
-    errorElement.classList.add('popup-form__input-error_active');
-};
-// Функция, которая удаляет класс с ошибкой
-const hideInputError = (formElement, inputElement) => {
-    const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
-    inputElement.classList.remove('popup-form__input_type_error');
-    errorElement.classList.remove('popup-form__input-error_active');
-    errorElement.textContent = '';
-};
-
-const checkInputValidity = (formElement, inputElement) => {
-    if (!inputElement.validity.valid) {
-        showInputError(formElement, inputElement, inputElement.validationMessage);
-    } else {
-        hideInputError(formElement, inputElement);
-    }
-};
-
-const setEventListeners = (formElement) => {
-    const inputList = Array.from(formElement.querySelectorAll('.popup-form__input'));
-    const buttonElement = formElement.querySelector('.popup-form__save-btn');
-
-    toggleButtonState(inputList, buttonElement);
-
-    inputList.forEach((inputElement) => {
-        inputElement.addEventListener('input', function () {
-            checkInputValidity(formElement, inputElement);
-
-            toggleButtonState(inputList, buttonElement);
-        });
-    });
-};
-
-const enableValidation = () => {
-    const formList = Array.from(document.querySelectorAll('.popup-form'));
-
-    formList.forEach((formElement) => {
-        formElement.addEventListener('submit', function (evt) {
-            evt.preventDefault();
-        });
-
-        const fieldsetList = Array.from(formElement.querySelectorAll('.popup-form__set'));
-
-        fieldsetList.forEach((fieldSet) => {
-            setEventListeners(fieldSet);
-        });
-
-    });
-};
-
-const hasInvalidInput = (inputList) => {
-    return inputList.some((inputElement) => {
-        return !inputElement.validity.valid;
-    })
-}
-
-const toggleButtonState = (inputList, buttonElement) => {
-    if (hasInvalidInput(inputList)) {
-        buttonElement.classList.add('popup-form__button-save_inactive');
-    } else {
-        buttonElement.classList.remove('popup-form__button-save_inactive');
-    }
-}
-
-enableValidation();
