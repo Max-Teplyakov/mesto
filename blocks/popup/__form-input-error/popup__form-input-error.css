@@ -1,4 +1,4 @@
-.popup-form__input-error {
+.popup__form-input-error {
     margin: 5px auto 0;
     width: 358px;
     max-width: 358px;
@@ -11,7 +11,7 @@
 }
 
 @media screen and (max-width: 653px) {
-    .popup-form__input-error {
+    .popup__form-input-error {
         width: 234px;
         left: 22px;
     }

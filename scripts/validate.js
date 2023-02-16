@@ -40,7 +40,7 @@ const enableValidation = (data) => {
     const formList = Array.from(document.querySelectorAll(data.formSelector));
 
     formList.forEach((formElement) => {
-        const fieldsetList = Array.from(formElement.querySelectorAll('.popup-form__set'));
+        const fieldsetList = Array.from(formElement.querySelectorAll('.popup__form-set'));
 
         fieldsetList.forEach((fieldSet) => {
             setEventListeners(fieldSet, data);
@@ -64,10 +64,10 @@ const toggleButtonState = (inputList, buttonElement, inactiveButtonClass) => {
 }
 
 enableValidation({
-    formSelector: '.popup-form',
-    inputSelector: '.popup-form__input',
-    submitButtonSelector: '.popup-form__save-btn',
-    inactiveButtonClass: 'popup-form__button-save_inactive',
-    inputErrorClass: 'popup-form__input_type_error',
-    errorClass: 'popup-form__input-error_active'
+    formSelector: '.popup__form',
+    inputSelector: '.popup__form-input',
+    submitButtonSelector: '.popup__form-save-btn',
+    inactiveButtonClass: 'popup__form-button-save_inactive',
+    inputErrorClass: 'popup__form-input_type_error',
+    errorClass: 'popup__form-input-error_active'
 });

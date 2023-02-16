@@ -1,4 +1,4 @@
-.popup-form__input {
+.popup__form-input {
     margin: 0 36px;
     padding: 0;
     width: 354px;
@@ -9,13 +9,13 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-.popup-form__input:invalid {
+.popup__form-input:invalid {
     border-bottom: 1px solid #FF0000;
 }
 
 @media screen and (max-width: 653px) {
 
-    .popup-form__input {
+    .popup__form-input {
         margin: 0 22px 30px;
         width: 234px;
     }

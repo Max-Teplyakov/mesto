@@ -5,17 +5,17 @@ const popupProfileOpenBtn = document.querySelector('.profile__redact');
 const popupProfileCloseBtn = popupProfile.querySelector('.popup__close-btn');
 const profileName = document.querySelector('.profile__name');
 const profileJob = document.querySelector('.profile__about-me');
-const formElementProfile = document.querySelector('.popup-form__profile');
-const nameInput = formElementProfile.querySelector('.popup-form__input_person_name');
-const jobInput = formElementProfile.querySelector('.popup-form__input_person_about-me');
+const formElementProfile = document.querySelector('.popup__form-profile');
+const nameInput = formElementProfile.querySelector('.popup__form-input_person_name');
+const jobInput = formElementProfile.querySelector('.popup__form-input_person_about-me');
 
 // Попап Карточки
 const popupCardOpen = document.querySelector('.profile__add-button');
 const popupCardContain = document.querySelector('.popup_type_card');
 const popupCardClose = document.querySelector('.popup__btn-card-close');
-const formElementCard = document.querySelector('.popup-form__card');
-const cardNameInput = formElementCard.querySelector('.popup-form__input_card_name');
-const cardLinkInput = formElementCard.querySelector('.popup-form__input_card_src');
+const formElementCard = document.querySelector('.popup__form-card');
+const cardNameInput = formElementCard.querySelector('.popup__form-input_card_name');
+const cardLinkInput = formElementCard.querySelector('.popup__form-input_card_src');
 
 // Попап Картинки
 const popupImageConatin = document.querySelector('.popup_type_image');
@@ -24,7 +24,7 @@ const elementImagePopup = document.querySelector('.popup__image');
 const elemenTextPopup = document.querySelector('.popup__title-image');
 
 //Попап общее
-const popupInput = document.querySelectorAll('.popup-form__input');
+const popupInput = document.querySelectorAll('.popup__form-input');
 const popupCloseBtn = document.querySelectorAll('.popup__close-btn');
 
 // Template
