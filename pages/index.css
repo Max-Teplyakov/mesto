@@ -60,7 +60,6 @@
 @import url(../blocks/popup-form/__input-error/popup-form__input-error.css);
 @import url(../blocks/popup-form/__set/popup-form__set.css);
 @import url(../blocks/popup-form/__button-save/_inactive/popup-form__button-save_inactive.css);
-@import url(../blocks/popup-form/__label/popup-form__label.css);
 
 /* overlay */
 @import url(../blocks/overlay/overlay.css);
