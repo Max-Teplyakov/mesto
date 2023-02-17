@@ -1,5 +1,5 @@
 // Попап Профиль
-const popup = document.querySelectorAll('.popup');
+const popupList = Array.from(document.querySelectorAll('.popup'));
 const popupProfile = document.querySelector('.popup_type_profile');
 const popupProfileOpenBtn = document.querySelector('.profile__redact');
 const popupProfileCloseBtn = popupProfile.querySelector('.popup__close-btn');
@@ -105,13 +105,14 @@ popupProfileOpenBtn.addEventListener('click', () => {
     openPopup(popupProfile);
 });
 
-const closePopupByClickOnOverlay = (evt) => {
-    if (evt.target === evt.currentTarget) {
-        closePopup(evt.target);
-    };
-};
-popup.forEach((item) => {
-    item.addEventListener('click', closePopupByClickOnOverlay)
+//Хакрытие попап по оверлей
+popupList.forEach((popup) => {
+    popup.addEventListener('mouseup', (event) => {
+        const targetClassList = event.target.classList; // запишем в переменную класс элемента, на котором произошло событие
+        if (targetClassList.contains('popup') || targetClassList.contains('popup__close')) { // проверяем наличие класса попапа ИЛИ кнопки закрытия
+            closePopup(popup); // если один из классов присутствует, то закрываем попап
+        }
+    });
 });
 
 function handleFormSubmitProfile(evt) {
