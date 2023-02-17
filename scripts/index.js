@@ -32,12 +32,10 @@ const elementTemplate = document.querySelector('#element').content.querySelector
 const cardsContainer = document.querySelector('.elements');
 
 function renderCards(items) {
-    const cards = items.map((item) => {
-        return createCard({ name: item.name, link: item.link })
+    items.forEach(({ name, link }) => {
+        cardsContainer.append(createCard({ name, link }));
     })
-    cardsContainer.append(...cards);
 }
-
 renderCards(initialCards);
 
 function createCard(item) {
@@ -60,10 +58,8 @@ function createCard(item) {
         elementImagePopup.src = item.link;
         elementImagePopup.alt = item.name;
         elemenTextPopup.textContent = item.name;
-
         openPopup(popupImageConatin);
     });
-
     return cardElement
 }
 
@@ -89,12 +85,17 @@ function closePopupByEscape(evt) {
     if (evt.key === 'Escape') {
         openedPopup = document.querySelector('.popup_opened');
         closePopup(openedPopup)
-    }
-}
+    };
+};
 
 // Открытие попапа карточки
 popupCardOpen.addEventListener('click', () => {
-    openPopup(popupCardContain)
+    openPopup(popupCardContain);
+    const buttonElement = Array.from(document.querySelectorAll('.popup__form-save-btn'));
+    buttonElement.forEach((item) => {
+        item.setAttribute('disabled', '');
+        item.classList.add('popup__form-save-btn_inactive');
+    });
 });
 
 // Открытие попапа профиля
@@ -107,30 +108,32 @@ popupProfileOpenBtn.addEventListener('click', () => {
 const closePopupByClickOnOverlay = (evt) => {
     if (evt.target === evt.currentTarget) {
         closePopup(evt.target);
-    }
-}
+    };
+};
 popup.forEach((item) => {
     item.addEventListener('click', closePopupByClickOnOverlay)
-})
+});
 
 function handleFormSubmitProfile(evt) {
     evt.preventDefault();
-
     profileJob.textContent = jobInput.value;
     profileName.textContent = nameInput.value;
-
     closePopup(popupProfile);
 }
 
 function handlerFormSubmitCard(evt) {
     evt.preventDefault();
-
     const cardElement = createCard({ name: cardNameInput.value, link: cardLinkInput.value })
 
     cardsContainer.prepend(cardElement);
 
     closePopup(popupCardContain);
     evt.target.reset();
+    const buttonElement = Array.from(document.querySelectorAll('.popup__form-save-btn'));
+    buttonElement.forEach((item) => {
+        item.setAttribute('disabled', '');
+        item.classList.add('popup__form-save-btn_inactive');
+    })
 }
 
 formElementProfile.addEventListener('submit', handleFormSubmitProfile);

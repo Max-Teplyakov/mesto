@@ -55,10 +55,11 @@
 @import url(../blocks/popup/__title-image/popup__title-image.css);
 
 @import url(../blocks/popup/__form-input/popup__form-input.css);
-@import url(../blocks/popup/__form-save-btn/popup-form__save-btn.css);
+@import url(../blocks/popup/__form-save-btn/popup__form-save-btn.css);
 @import url(../blocks/popup/__form-input-error/popup__form-input-error.css);
 @import url(../blocks/popup/__form-set/popup__form-set.css);
-@import url(../blocks/popup/__form-button-save/_inactive/popup__form-button-save_inactive.css);
+@import url(../blocks/popup/__form-save-btn/_inactive/popup__form-save-btn_inactive.css);
+@import url(../blocks/popup/__form-input/_type_error/popup__form-input_type_error.css);
 
 /* overlay */
 @import url(../blocks/overlay/overlay.css);
