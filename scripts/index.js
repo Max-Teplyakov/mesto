@@ -38,13 +38,13 @@ function renderCards(items) {
 }
 renderCards(initialCards);
 
-function createCard(item) {
+function createCard(cardData) {
     const cardElement = elementTemplate.cloneNode(true);
     const elementImageCard = cardElement.querySelector('.element__img');
 
-    elementImageCard.src = item.link;
-    elementImageCard.alt = item.name;
-    cardElement.querySelector('.element__title').textContent = item.name;
+    elementImageCard.src = cardData.link;
+    elementImageCard.alt = cardData.name;
+    cardElement.querySelector('.element__title').textContent = cardData.name;
 
     cardElement.querySelector('.element__btn-delete-card').addEventListener('click', () => {
         cardElement.remove();
@@ -55,9 +55,9 @@ function createCard(item) {
     });
 
     elementImageCard.addEventListener('click', () => {
-        elementImagePopup.src = item.link;
-        elementImagePopup.alt = item.name;
-        elemenTextPopup.textContent = item.name;
+        elementImagePopup.src = cardData.link;
+        elementImagePopup.alt = cardData.name;
+        elemenTextPopup.textContent = cardData.name;
         openPopup(popupImageConatin);
     });
     return cardElement
