@@ -1,15 +1,9 @@
 import FormValidator from './FormValidator.js';
 import Card from './Card.js';
 import initialCards from './data.js';
+import options from './options.js';
 
-const options = {
-    formSelector: '.popup__form',
-    inputSelector: '.popup__form-input',
-    submitButtonSelector: '.popup__form-save-btn',
-    inactiveButtonClass: 'popup__form-save-btn_inactive',
-    inputErrorClass: 'popup__form-input_type_error',
-    errorClass: 'popup__form-input-error_active'
-}
+
 // Попап Профиль
 const popupList = Array.from(document.querySelectorAll('.popup'));
 const popupProfile = document.querySelector('.popup_type_profile');
