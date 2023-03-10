@@ -72,11 +72,8 @@ function closePopupByEscape(evt) {
 // Открытие попапа карточки
 function openPopupCardOnClick() {
     openPopup(popupCardContain);
-    const buttonElement = Array.from(document.querySelectorAll('.popup__form-save-btn'));
-    buttonElement.forEach(() => {
-        cardFormValidate.toggleButtonState();
-        cardFormValidate.resetValidation();
-    });
+    cardFormValidate.toggleButtonState();
+    cardFormValidate.resetValidation();
 }
 
 popupCardOpen.addEventListener('click', openPopupCardOnClick);
@@ -104,13 +101,9 @@ popupList.forEach((popup) => {
 function handlerFormSubmitCard(evt) {
     evt.preventDefault();
     cardsContainer.prepend(createCard({ name: cardNameInput.value, link: cardLinkInput.value }));
-
     closePopup(popupCardContain);
     evt.target.reset();
-    const buttonElement = Array.from(document.querySelectorAll('.popup__form-save-btn'));
-    buttonElement.forEach(() => {
-        cardFormValidate.toggleButtonState();
-    })
+    cardFormValidate.toggleButtonState();
 }
 
 formElementProfile.addEventListener('submit', handleFormSubmitProfile);
