@@ -22,7 +22,6 @@ const cardNameInput = formElementCard.querySelector('.popup__form-input_card_nam
 const cardLinkInput = formElementCard.querySelector('.popup__form-input_card_src');
 
 //Попап общее
-const popupCloseBtn = document.querySelectorAll('.popup__close-btn');
 const cardsContainer = document.querySelector('.elements');
 
 const profileFormValidate = new FormValidator(options, formElementProfile);
@@ -63,14 +62,6 @@ function closePopup(popup) {
     document.removeEventListener('keydown', closePopupByEscape);
 }
 
-//Закрытие попапов
-popupCloseBtn.forEach((button) => {
-    const popupBtn = button.closest('.popup');
-    button.addEventListener('click', () => {
-        closePopup(popupBtn);
-    })
-})
-
 //фукция закрытия по Esc
 function closePopupByEscape(evt) {
     if (evt.key === 'Escape') {
@@ -78,29 +69,33 @@ function closePopupByEscape(evt) {
     };
 };
 
-
 // Открытие попапа карточки
-popupCardOpen.addEventListener('click', () => {
+function openPopupCardOnClick() {
     openPopup(popupCardContain);
     const buttonElement = Array.from(document.querySelectorAll('.popup__form-save-btn'));
-    buttonElement.forEach((item) => {
-        item.setAttribute('disabled', '');
-        item.classList.add('popup__form-save-btn_inactive');
+    buttonElement.forEach(() => {
+        cardFormValidate.toggleButtonState();
+        cardFormValidate.resetValidation();
     });
-});
+}
+
+popupCardOpen.addEventListener('click', openPopupCardOnClick);
 
 // Открытие попапа профиля
-popupProfileOpenBtn.addEventListener('click', () => {
+function openPopupProfileOnClick() {
     nameInput.value = profileName.textContent;
     jobInput.value = profileJob.textContent;
     openPopup(popupProfile);
-});
+    profileFormValidate.resetValidation();
+}
+
+popupProfileOpenBtn.addEventListener('click', openPopupProfileOnClick);
 
 //Закрытие попап по оверлей
 popupList.forEach((popup) => {
-    popup.addEventListener('mouseup', (event) => {
+    popup.addEventListener('mousedown', (event) => {
         const targetClassList = event.target.classList; // запишем в переменную класс элемента, на котором произошло событие
-        if (targetClassList.contains('popup') || targetClassList.contains('popup__close')) { // проверяем наличие класса попапа ИЛИ кнопки закрытия
+        if (targetClassList.contains('popup') || targetClassList.contains('popup__close-btn')) { // проверяем наличие класса попапа ИЛИ кнопки закрытия
             closePopup(popup); // если один из классов присутствует, то закрываем попап
         }
     });
@@ -113,9 +108,8 @@ function handlerFormSubmitCard(evt) {
     closePopup(popupCardContain);
     evt.target.reset();
     const buttonElement = Array.from(document.querySelectorAll('.popup__form-save-btn'));
-    buttonElement.forEach((item) => {
-        item.setAttribute('disabled', '');
-        item.classList.add('popup__form-save-btn_inactive');
+    buttonElement.forEach(() => {
+        cardFormValidate.toggleButtonState();
     })
 }
 
