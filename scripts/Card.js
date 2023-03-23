@@ -1,13 +1,12 @@
 class Card {
-    constructor(link, name, templateSelector, openPopup) {
-        this._link = link;
-        this._name = name;
+    constructor({data, handleCardClick}, templateSelector) {
+        this._link = data.link;
+        this._name = data.name;
         this._templateSelector = templateSelector;
         this._popupImageConatin = document.querySelector('.popup_type_image');
         this._elementImagePopup = document.querySelector('.popup__image');
         this._elemenTextPopup = document.querySelector('.popup__title-image');
-
-        this._openPopup = openPopup;
+        this._handleCardClick = handleCardClick;
     }
 
     _getTemplate() {
@@ -43,10 +42,7 @@ class Card {
     }
 
     _handleImageOnClick() {
-        this._elementImagePopup.src = this._link;
-        this._elementImagePopup.alt = this._name;
-        this._elemenTextPopup.textContent = this._name;
-        this._openPopup(this._popupImageConatin);
+        this._handleCardClick({name: this._name, link: this._link})
     }
 
     _setEventListeners() {
@@ -56,8 +52,8 @@ class Card {
         this._elementLikeImage.addEventListener('click', () => {
             this._handleLikeImageOnClick();
         });
-        this._elementImageCard.addEventListener('click', () => {
-            this._handleImageOnClick();
+        this._elementImageCard.addEventListener('click', (evt) => {
+            this._handleImageOnClick(evt);
         });
     }
 }
