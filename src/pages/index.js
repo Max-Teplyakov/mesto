@@ -1,27 +1,10 @@
-import FormValidator from './FormValidator.js';
-import Card from './Card.js';
-import Section from './Section.js';
-import PopupWithImage from './PopupWithImage.js';
-import PopupWithForm from './PopupWithForm.js';
-import UserInfo from './UserInfo.js';
-import initialCards from './data.js';
-import options from './options.js';
-
-const cardsContainer = document.querySelector('.elements');
-// Попап Профиль
-const popupProfile = document.querySelector('.popup_type_profile');
-const popupProfileOpenBtn = document.querySelector('.profile__redact');
-const profileName = document.querySelector('.profile__name');
-const profileJob = document.querySelector('.profile__about-me');
-const formElementProfile = document.querySelector('.popup__form-profile');
-
-// Попап Карточки
-const popupCardOpen = document.querySelector('.profile__add-button');
-const popupCardContain = document.querySelector('.popup_type_card');
-const formElementCard = document.querySelector('.popup__form-card');
-
-//Попап Картинки
-const popupWithImageSelector = document.querySelector('.popup_type_image');
+import FormValidator from '../components/FormValidator.js';
+import Card from '../components/Card.js';
+import Section from '../components/Section.js';
+import PopupWithImage from '../components/PopupWithImage.js';
+import PopupWithForm from '../components/PopupWithForm.js';
+import UserInfo from '../components/UserInfo.js';
+import {initialCards, options, cardsContainer, popupProfile, popupProfileOpenBtn, profileName, profileJob, formElementProfile, popupCardOpen, popupCardContain, formElementCard, popupWithImageSelector} from '../utils/data.js';
 
 const handleCardClick = (data) => {
     popupWithImage.open(data);
