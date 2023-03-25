@@ -11,13 +11,18 @@
     "type": "git",
     "url": "git+https://github.com/Max-Teplyakov/mesto.git"
   },
+<<<<<<< HEAD
   "author": "",
+=======
+  "author": "max-tepl",
+>>>>>>> 40642a1658353c833e87585f8cd580f279b38613
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Max-Teplyakov/mesto/issues"
   },
   "homepage": "https://github.com/Max-Teplyakov/mesto#readme",
   "devDependencies": {
+<<<<<<< HEAD
     "@babel/core": "^7.21.3",
     "@babel/preset-env": "^7.20.2",
     "autoprefixer": "^10.4.14",
@@ -34,5 +39,9 @@
   },
   "dependencies": {
     "core-js": "^3.29.1"
+=======
+    "webpack": "^5.76.3",
+    "webpack-cli": "^5.0.1"
+>>>>>>> 40642a1658353c833e87585f8cd580f279b38613
   }
 }
