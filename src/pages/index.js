@@ -5,6 +5,7 @@ import PopupWithImage from '../components/PopupWithImage.js';
 import PopupWithForm from '../components/PopupWithForm.js';
 import UserInfo from '../components/UserInfo.js';
 import {initialCards, options, cardsContainer, popupProfile, popupProfileOpenBtn, profileName, profileJob, formElementProfile, popupCardOpen, popupCardContain, formElementCard, popupWithImageSelector} from '../utils/data.js';
+import './index.css';
 
 const handleCardClick = (data) => {
     popupWithImage.open(data);
@@ -69,21 +70,4 @@ function openPopupProfileOnClick() {
 }
 
 popupProfileOpenBtn.addEventListener('click', openPopupProfileOnClick);
-
-// function handleFormSubmitProfile(evt) {
-//     popupWithFormProfile.setInputValues(userInfo.getUserInfo());
-//     evt.preventDefault();
-//     popupWithFormProfile.close();
-// }
-
-// function handlerFormSubmitCard(evt) {
-//     evt.preventDefault();
-//     cardsContainer.prepend(createCard({ name: cardNameInput.value, link: cardLinkInput.value }));
-//     popupWithFormCard.close();
-//     evt.target.reset();
-//     cardFormValidate.toggleButtonState();
-// }
-
-// formElementProfile.addEventListener('submit', handleFormSubmitProfile);
-// formElementCard.addEventListener('submit', handlerFormSubmitCard);
 
