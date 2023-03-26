@@ -1,31 +1,35 @@
 export default class Popup {
-    constructor(popupSelector) {
-        this._popupSelector = popupSelector;
-        this._HandleEscClose = this._handleEscClose.bind(this);
-    }
+  constructor(popupSelector) {
+    this._popupSelector = popupSelector;
+    this._HandleEscClose = this._handleEscClose.bind(this);
+  }
 
-    open() {
-        this._popupSelector.classList.add('popup_opened');
-        document.addEventListener('keydown', this._HandleEscClose);
-        }
+  open() {
+    this._popupSelector.classList.add("popup_opened");
+    document.addEventListener("keydown", this._HandleEscClose);
+  }
 
-    close() {
-        this._popupSelector.classList.remove('popup_opened');
-        document.removeEventListener('keydown', this._HandleEscClose);
-    }
+  close() {
+    this._popupSelector.classList.remove("popup_opened");
+    document.removeEventListener("keydown", this._HandleEscClose);
+  }
 
-    _handleEscClose(evt) {
-        if (evt.key === 'Escape') {
-            this.close();
-        };
+  _handleEscClose(evt) {
+    if (evt.key === "Escape") {
+      this.close();
     }
+  }
 
-    setEventListeners() {
-        this._popupSelector.addEventListener('mousedown', (event) => {
-            const targetClassList = event.target.classList; // запишем в переменную класс элемента, на котором произошло событие
-            if (targetClassList.contains('popup') || targetClassList.contains('popup__close-btn')) { // проверяем наличие класса попапа ИЛИ кнопки закрытия
-                this.close(); // если один из классов присутствует, то закрываем попап
-            }
-        });
-    }
+  setEventListeners() {
+    this._popupSelector.addEventListener("mousedown", (event) => {
+      const targetClassList = event.target.classList; // запишем в переменную класс элемента, на котором произошло событие
+      if (
+        targetClassList.contains("popup") ||
+        targetClassList.contains("popup__close-btn")
+      ) {
+        // проверяем наличие класса попапа ИЛИ кнопки закрытия
+        this.close(); // если один из классов присутствует, то закрываем попап
+      }
+    });
+  }
 }
