@@ -34,9 +34,9 @@ export const initialCards = [
   },
 ];
 
-export const cardsContainer = document.querySelector(".elements");
+export const cardsContainer = ".elements";
 // Попап Профиль
-export const popupProfile = document.querySelector(".popup_type_profile");
+export const popupProfile = ".popup_type_profile";
 export const popupProfileOpenBtn = document.querySelector(".profile__redact");
 export const profileName = document.querySelector(".profile__name");
 export const profileJob = document.querySelector(".profile__about-me");
@@ -46,9 +46,8 @@ export const formElementProfile = document.querySelector(
 
 // Попап Карточки
 export const popupCardOpen = document.querySelector(".profile__add-button");
-export const popupCardContain = document.querySelector(".popup_type_card");
+export const popupCardContain = ".popup_type_card";
 export const formElementCard = document.querySelector(".popup__form-card");
 
 //Попап Картинки
-export const popupWithImageSelector =
-  document.querySelector(".popup_type_image");
+export const popupWithImageSelector = ".popup_type_image";

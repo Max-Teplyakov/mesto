@@ -32,7 +32,7 @@ function createCard(item) {
   return cardElement;
 }
 
-//Создание карточек
+//Создание карточеk
 const cardList = new Section(
   {
     items: initialCards,
@@ -50,20 +50,23 @@ const popupWithImage = new PopupWithImage(popupWithImageSelector);
 popupWithImage.setEventListeners();
 
 //Попап Карточки
-const addCardFormSubmit = ({ title, data }) => {
+const handleAddCardFormSubmit = ({ title, data }) => {
   cardList.addItem(createCard({ name: title, link: data }));
 };
 const popupWithFormCard = new PopupWithForm(
   popupCardContain,
-  addCardFormSubmit
+  handleAddCardFormSubmit
 );
 popupWithFormCard.setEventListeners();
 
 //Попап Профиля
-const profileFormSubmit = (info) => {
+const handleProfileFormSubmit = (info) => {
   userInfo.setUserInfo(info);
 };
-const popupWithFormProfile = new PopupWithForm(popupProfile, profileFormSubmit);
+const popupWithFormProfile = new PopupWithForm(
+  popupProfile,
+  handleProfileFormSubmit
+);
 popupWithFormProfile.setEventListeners();
 
 //Валидация форм
@@ -74,7 +77,6 @@ cardFormValidate.enableValidation();
 
 // Открытие попапа карточки
 function openPopupCardOnClick() {
-  cardFormValidate.toggleButtonState();
   cardFormValidate.resetValidation();
   popupWithFormCard.open();
 }
