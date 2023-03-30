@@ -6,6 +6,7 @@ export const options = {
   inputErrorClass: "popup__form-input_type_error",
   errorClass: "popup__form-input-error_active",
 };
+
 // Массив С Карточками
 export const initialCards = [
   {
@@ -48,6 +49,11 @@ export const formElementProfile = document.querySelector(
 export const popupCardOpen = document.querySelector(".profile__add-button");
 export const popupCardContain = ".popup_type_card";
 export const formElementCard = document.querySelector(".popup__form-card");
+
+// Попап Аватара профиля
+export const popupAvatarSelector = ".popup_type_avatar";
+export const popupAvatarOpenBtn = document.querySelector(".avatar__redact");
+export const formElementAvatar = document.querySelector(".popup__form-avatar");
 
 //Попап Картинки
 export const popupWithImageSelector = ".popup_type_image";

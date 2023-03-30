@@ -24,12 +24,17 @@
           alt="аватар"
           class="profile__avatar"
         />
+        <img
+          src="<%=require('./images/edit-avatar.png')%>"
+          alt="кнопка редактированния аватара"
+          class="profile__avatar-edit"
+        />
         <div class="profile__info">
           <div class="profile__block">
-            <h1 class="profile__name">Жак-Ив Кусто</h1>
+            <h1 class="profile__name"></h1>
             <button class="profile__redact active" type="button"></button>
           </div>
-          <p class="profile__about-me">Исследователь океана</p>
+          <p class="profile__about-me"></p>
         </div>
         <button class="profile__add-button active" type="button">
           <img
@@ -47,7 +52,10 @@
             <button class="element__btn-delete-card"></button>
             <div class="element__block">
               <h2 class="element__title"></h2>
-              <button class="element__btn-like" type="button"></button>
+              <div class="element__block-like">
+                <button class="element__btn-like" type="button"></button>
+                <p class="element__number-like">0</p>
+              </div>
             </div>
           </div>
         </template>
@@ -57,7 +65,7 @@
     <footer class="footer">
       <p class="footer__title">© 2020 Mesto Russia</p>
     </footer>
-
+    <!-- Попап Профиля -->
     <section class="popup popup_type_profile">
       <div class="popup__container">
         <button class="popup__close-btn active" type="button"></button>
@@ -99,6 +107,7 @@
         </form>
       </div>
     </section>
+    <!-- Попап добавления Карточки -->
     <section class="popup popup_type_card">
       <div class="popup__container">
         <button
@@ -135,6 +144,7 @@
         </form>
       </div>
     </section>
+    <!-- Попап Картиинки -->
     <section class="popup popup_type_image overlay">
       <figure class="popup__figure-image">
         <button
@@ -144,6 +154,43 @@
         <img class="popup__image" src="#" />
         <figcaption class="popup__title popup__title-image"></figcaption>
       </figure>
+    </section>
+    <!-- Попап Удаления -->
+    <section class="popup popup_type_delete">
+      <div class="popup__container">
+        <button
+          class="popup__close-btn popup__btn-delete-close active"
+          type="button"
+        ></button>
+        <h2 class="popup__title">Вы уверены?</h2>
+        <button class="popup__form-save-btn" type="submit">Да</button>
+      </div>
+    </section>
+    <!-- Попап Подтверждения -->
+    <section class="popup popup_type_avatar">
+      <div class="popup__container">
+        <button
+          class="popup__close-btn popup__btn-delete-close active"
+          type="button"
+        ></button>
+        <h2 class="popup__title">Обновить аватар</h2>
+        <form class="popup__form popup__form-avatar" name="avatar" novalidate>
+          <fieldset class="popup__form-set">
+            <input
+              class="popup__form-input popup__form-input_avatar_src"
+              id="url-avatar-input"
+              name="url-avatar"
+              type="url"
+              placeholder="Ссылка на картинку"
+              required
+            />
+            <span class="popup__form-input-error url-avatar-input-error"></span>
+            <button class="popup__form-save-btn" type="submit">
+              Сохранить
+            </button>
+          </fieldset>
+        </form>
+      </div>
     </section>
   </body>
 </html>

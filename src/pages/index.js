@@ -1,3 +1,4 @@
+import Api from "../components/Api.js";
 import FormValidator from "../components/FormValidator.js";
 import Card from "../components/Card.js";
 import Section from "../components/Section.js";
@@ -33,14 +34,7 @@ function createCard(item) {
 }
 
 //Создание карточеk
-const cardList = new Section(
-  {
-    items: initialCards,
-    renderer: createCard,
-  },
-  cardsContainer
-);
-cardList.renderItems();
+const cardList = new Section({ renderer: createCard }, cardsContainer);
 
 //Профиль
 const userInfo = new UserInfo(profileName, profileJob);
@@ -91,3 +85,27 @@ function openPopupProfileOnClick() {
 }
 
 popupProfileOpenBtn.addEventListener("click", openPopupProfileOnClick);
+
+// //Открытие попапа аватара
+// function openPopupAvatarOnClick() {}
+
+const api = new Api({
+  baseUrl: "https://mesto.nomoreparties.co/v1/cohort-63",
+  headers: {
+    authorization: "998e2e8b-88af-4a48-b83c-6d7bca9f9f59",
+    "Content-Type": "application/json",
+  },
+});
+
+Promise.all([api.getUserData(), api.getInitialCards()])
+  .then((data) => {
+    console.log(data);
+    userInfo.setUserInfo({ name: data[0].name, aboutme: data[0].about });
+    // userInfo.setAvatar(data[0].avatar);
+    // userInfo.setUserId(data[0]._id);
+
+    cardList.renderItems(data[1]);
+  })
+  .catch((err) => console.log(err));
+
+api.replaceUserData();
