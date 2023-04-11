@@ -1,16 +1,17 @@
 .element__btn-delete-card {
-    width: 18px;
-    height: 19px;
-    background-image: url('../../../images/deleteCard.svg');
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background-color: rgba(28, 28, 28, 0);
-    background-size: cover;
-    border: none;
+  display: none;
+  width: 18px;
+  height: 19px;
+  background-image: url("../../../images/deleteCard.svg");
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: rgba(28, 28, 28, 0);
+  background-size: cover;
+  border: none;
 }
 
 .element__btn-delete-card:hover {
-    cursor: pointer;
-    opacity: 0.6;
+  cursor: pointer;
+  opacity: 0.6;
 }

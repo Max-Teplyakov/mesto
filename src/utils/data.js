@@ -52,8 +52,12 @@ export const formElementCard = document.querySelector(".popup__form-card");
 
 // Попап Аватара профиля
 export const popupAvatarSelector = ".popup_type_avatar";
-export const popupAvatarOpenBtn = document.querySelector(".avatar__redact");
-export const formElementAvatar = document.querySelector(".popup__form-avatar");
+export const popupAvatarOpenBtn = document.querySelector(
+  ".profile__avatar-edit"
+);
 
 //Попап Картинки
 export const popupWithImageSelector = ".popup_type_image";
+
+//Попап удаления
+export const popupCardDeleteSelector = ".popup_type_delete";
