@@ -55,6 +55,7 @@ export const popupAvatarSelector = ".popup_type_avatar";
 export const popupAvatarOpenBtn = document.querySelector(
   ".profile__avatar-edit"
 );
+export const formElementAvatar = document.querySelector(".popup__form-avatar");
 
 //Попап Картинки
 export const popupWithImageSelector = ".popup_type_image";
