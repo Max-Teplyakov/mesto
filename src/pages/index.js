@@ -34,12 +34,12 @@ const api = new Api({
 });
 
 Promise.all([api.getUserData(), api.getInitialCards()])
-  .then((data) => {
-    userInfo.setUserInfo({ name: data[0].name, aboutme: data[0].about });
-    userInfo.setUserAvatar(data[0].avatar);
-    userInfo.setUserId(data[0]._id);
+  .then(([userData, cardsArray]) => {
+    userInfo.setUserInfo({ name: userData.name, aboutme: userData.about });
+    userInfo.setUserAvatar(userData.avatar);
+    userInfo.setUserId(userData._id);
 
-    cardList.renderItems(data[1]);
+    cardList.renderItems(cardsArray);
   })
   .catch((err) => console.log(err));
 
@@ -104,11 +104,16 @@ popupWithImage.setEventListeners();
 //Попап Карточки
 const handleAddCardFormSubmit = (data) => {
   popupWithFormCard.loadingButtonText(true);
-  api.addCard({ name: data.title, link: data.data }).then((card) => {
-    cardList.addItem(createCard(card));
-    popupWithFormCard.close();
-    popupWithFormCard.loadingButtonText(false);
-  });
+  api
+    .addCard({ name: data.title, link: data.data })
+    .then((card) => {
+      cardList.addItem(createCard(card));
+      popupWithFormCard.close();
+    })
+    .catch((err) => console.log(err))
+    .finally(() => {
+      popupWithFormCard.loadingButtonText(false);
+    });
 };
 const popupWithFormCard = new PopupWithForm(
   popupCardContain,
@@ -124,9 +129,11 @@ const handleProfileFormSubmit = (info) => {
     .then((users) => {
       userInfo.setUserInfo({ name: users.name, aboutme: users.about });
       popupWithFormProfile.close();
-      popupWithFormProfile.loadingButtonText(false);
     })
-    .catch((err) => console.log(err));
+    .catch((err) => console.log(err))
+    .finally(() => {
+      popupWithFormProfile.loadingButtonText(false);
+    });
 };
 const popupWithFormProfile = new PopupWithForm(
   popupProfile,
@@ -142,9 +149,11 @@ const handleAvatarFormSubmit = (data) => {
     .then((data) => {
       userInfo.setUserAvatar(data.avatar);
       popupWithFormAvatar.close();
-      popupWithFormAvatar.loadingButtonText(false);
     })
-    .catch((err) => console.log(err));
+    .catch((err) => console.log(err))
+    .finally(() => {
+      popupWithFormAvatar.loadingButtonText(false);
+    });
 };
 
 const popupWithFormAvatar = new PopupWithForm(
@@ -162,9 +171,11 @@ const handleDeleteCardFormSubmit = (_id, removeCard) => {
     .then(() => {
       removeCard();
       popupWithFormDelete.close();
-      popupWithFormDelete.loadingButtonText(false);
     })
-    .catch((err) => console.log(err));
+    .catch((err) => console.log(err))
+    .finally(() => {
+      popupWithFormDelete.loadingButtonText(false);
+    });
 };
 
 const popupWithFormDelete = new PopupWithSubmit(
@@ -206,21 +217,3 @@ const avatarFormValidate = new FormValidator(options, formElementAvatar);
 profileFormValidate.enableValidation();
 cardFormValidate.enableValidation();
 avatarFormValidate.enableValidation();
-
-// const formValidators = {}
-
-// // Включение валидации
-// const enableValidation = (options) => {
-//   const formList = Array.from(document.querySelectorAll(config.formSelector))
-//   formList.forEach((formElement) => {
-//     const validator = new FormValidator(formElement, config)
-// // получаем данные из атрибута `name` у формы
-//     const formName = formElement.getAttribute('name')
-
-//    // вот тут в объект записываем под именем формы
-//     formValidators[formName] = validator;
-//    validator.enableValidation();
-//   });
-// };
-
-// enableValidation(config);
