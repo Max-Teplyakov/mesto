@@ -21,6 +21,7 @@ import {
   popupAvatarSelector,
   popupAvatarOpenBtn,
   popupCardDeleteSelector,
+  formElementAvatar,
 } from "../utils/data.js";
 import "./index.css";
 
@@ -191,6 +192,7 @@ popupProfileOpenBtn.addEventListener("click", openPopupProfileOnClick);
 
 //Открытие попапа аватара
 function openPopupAvatarOnClick() {
+  avatarFormValidate.resetValidation();
   popupWithFormAvatar.open();
 }
 
@@ -199,5 +201,26 @@ popupAvatarOpenBtn.addEventListener("click", openPopupAvatarOnClick);
 //Валидация форм
 const profileFormValidate = new FormValidator(options, formElementProfile);
 const cardFormValidate = new FormValidator(options, formElementCard);
+const avatarFormValidate = new FormValidator(options, formElementAvatar);
+
 profileFormValidate.enableValidation();
 cardFormValidate.enableValidation();
+avatarFormValidate.enableValidation();
+
+// const formValidators = {}
+
+// // Включение валидации
+// const enableValidation = (options) => {
+//   const formList = Array.from(document.querySelectorAll(config.formSelector))
+//   formList.forEach((formElement) => {
+//     const validator = new FormValidator(formElement, config)
+// // получаем данные из атрибута `name` у формы
+//     const formName = formElement.getAttribute('name')
+
+//    // вот тут в объект записываем под именем формы
+//     formValidators[formName] = validator;
+//    validator.enableValidation();
+//   });
+// };
+
+// enableValidation(config);
